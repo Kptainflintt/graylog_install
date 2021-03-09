@@ -2,7 +2,7 @@
 
 echo -e "\033[0;32mMise à jour des paquets\033[0m"
 sleep 2
-apt update && apt upgrade
+apt update && apt upgrade -y
 echo ""
 
 echo -e "\033[0;32mInstallation des dépendances\033[0m"
