@@ -48,9 +48,11 @@ echo ""
 
 echo -e "\033[0;32mConfiguration de Graylog\033[0m"
 pass=$(pwgen -N 1 -s 96)
-echo -ne "\033[1;33mEnter Password for Graylog:\033[0m " && head -1 </dev/stdin | tr -d '\n' | sha256sum | cut -d" " -f1 > secret
-secret=$(cat secret)
+secret=$(read -p $'\033[1;33mEntrer le mot de passe Graylog:\033[0m' | tr -d '\n' | sha256sum | cut -d" " -f1)
+echo "Entrer votre Timezone, voir la liste sur https://www.joda.org/joda-time/timezones.html (ex. Europe/Paris)"
+read -p $'\033[1;33mTimezone: \033[0m' time
 cp /etc/graylog/server/server.conf /etc/graylog/server/server.bak
+echo "root_timezone = $time" >> /etc/graylog/server/server.conf
 echo "password_secret = $pass" >> /etc/graylog/server/server.conf
 echo "root_password_sha2 = $secret" >> /etc/graylog/server/server.conf
 echo "http_bind_address = 0.0.0.0:9000" >> /etc/graylog/server/server.conf
