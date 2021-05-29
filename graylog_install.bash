@@ -64,5 +64,4 @@ echo ""
 echo -e "\033[0;32mNettoyage\033[0m"
 sleep 2
 rm graylog-4.0-repository_latest.deb
-rm secret
 rm graylog_install.bash
