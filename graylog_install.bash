@@ -67,3 +67,8 @@ sleep 2
 rm graylog-4.0-repository_latest.deb
 rm graylog_install.bash
 rm secret
+
+ip4=$(/sbin/ip -o -4 addr list | grep 2: | awk '{print $4}' | cut -d/ -f1)
+
+echo -e "\033[0;32mInstallation terminée\033[0m"
+echo -e "\033[0;32mVotre serveur Graylog est disponible à l'adresse : http://$ip4:9000\033[0m"
