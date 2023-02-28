@@ -13,7 +13,7 @@ echo ""
 echo -e "\033[0;32mInstallation de MongoDB\033[0m"
 sleep 2
 wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | apt-key add -
-echo "deb http://repo.mongodb.org/apt/debian buster/mongodb-org/5.0 main" | tee /etc/apt/sources.list.d/mongodb-org-5.0.list
+echo "deb http://repo.mongodb.org/apt/debian buster/mongodb-org/6.0 main" | tee /etc/apt/sources.list.d/mongodb-org-6.0.list
 apt-get update
 apt install -y mongodb-org
 systemctl daemon-reload
@@ -41,8 +41,8 @@ echo ""
 
 echo -e "\033[0;32mInstallation de Graylog\033[0m"
 sleep 2
-wget https://packages.graylog2.org/repo/packages/graylog-4.0-repository_latest.deb
-dpkg -i graylog-4.0-repository_latest.deb
+wget https://packages.graylog2.org/repo/packages/graylog-5.0-repository_latest.deb
+dpkg -i graylog-5.0-repository_latest.deb
 apt-get update && apt install -y graylog-server
 echo ""
 
