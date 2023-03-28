@@ -7,7 +7,7 @@ echo ""
 
 echo -e "\033[0;32mInstallation des dépendances\033[0m"
 sleep 2
-apt install -y apt-transport-https openjdk-11-jre-headless uuid-runtime pwgen dirmngr gnupg wget
+apt install -y apt-transport-https openjdk-11-jre-headless uuid-runtime pwgen dirmngr gnupg wget sudo
 echo ""
 
 echo -e "\033[0;32mInstallation de MongoDB\033[0m"
